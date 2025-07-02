@@ -3,6 +3,13 @@ from tables import tables as t
 from charts import charts
 import dataframes
 
+st.set_page_config(
+    page_title="Streamlit Menu Example",
+    page_icon=":guardsman:",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 if "menu" not in st.session_state:
     st.session_state.menu = "Tables"
 
@@ -18,11 +25,13 @@ elif st.session_state.menu == "DataFrames":
     st.write("Esta es la página de DataFrames.")
     dataframes.dataframes()
 elif st.session_state.menu == "Tables":
-    st.title("Tables")
-    st.write("Esta es la página de Tables.")
+    #st.title("Tables")
+    #st.write("Esta es la página de Tables.")
     t() 
 elif st.session_state.menu == "Charts":
     st.title("Charts")
     st.write("Esta es la página de Charts.")
+    charts()
+    
 
 
